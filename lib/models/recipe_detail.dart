@@ -10,6 +10,7 @@ class RecipeDetail extends Equatable {
   final int duration;
   final String description;
   final List<String> categories;
+  final List<String> steps;
 
   RecipeDetail({
     this.id,
@@ -18,6 +19,7 @@ class RecipeDetail extends Equatable {
     this.duration,
     this.description,
     this.categories,
+    this.steps,
   });
 
   RecipeDetail copyWith({
@@ -27,6 +29,7 @@ class RecipeDetail extends Equatable {
     int duration,
     String description,
     List<String> categories,
+    List<String> steps,
   }) {
     return RecipeDetail(
       id: id ?? this.id,
@@ -35,6 +38,7 @@ class RecipeDetail extends Equatable {
       duration: duration ?? this.duration,
       description: description ?? this.description,
       categories: categories ?? this.categories,
+      steps: steps ?? this.steps,
     );
   }
 
@@ -46,6 +50,7 @@ class RecipeDetail extends Equatable {
       'duration': duration,
       'description': description,
       'categories': categories,
+      'steps': steps,
     };
   }
 
@@ -59,6 +64,7 @@ class RecipeDetail extends Equatable {
       duration: map['duration'],
       description: map['description'],
       categories: List<String>.from(map['categories']),
+      steps: List<String>.from(map['steps']),
     );
   }
 
@@ -71,6 +77,7 @@ class RecipeDetail extends Equatable {
       duration: responseDTO.duration,
       description: responseDTO.description,
       categories: responseDTO.categories,
+      steps: responseDTO.categories, // TODO: fix later
     );
   }
 
@@ -91,6 +98,7 @@ class RecipeDetail extends Equatable {
       duration,
       description,
       categories,
+      steps,
     ];
   }
 }

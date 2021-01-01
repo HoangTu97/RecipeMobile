@@ -84,13 +84,18 @@ class FakeRecipeRepositoryImpl extends RecipeRepository {
   Future<RecipeDetail> detail(int id) async {
     return RecipeDetail(
       id: 1,
-      title: "abc",
       photos: [
         "https://images.unsplash.com/photo-1533777324565-a040eb52facd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
       ],
+      title: "Hàu chiên trứng",
+      categories: ["Hải sản"],
       duration: 120,
-      description: "abc",
-      categories: ["abc"],
+      description: "Các bước làm",
+      steps: [
+        "Hàu rửa với nước muối, xả lại dưới vòi nước nhẹ hàng. Trứng đánh lên, nêm hạt nêm, tiêu. Đầu hành cắt nhuyễn.",
+        "Phi thơm đầu hành, cho tiếp hàu vào xào 1 phút với lửa to nhất, múc bớt nước hàu ra, sau đó mới cho trứng vào.",
+        "Cho trứng và hành vào, hạ lửa nhỏ, đậy nắp chảo lại để chín trứng phía trên, chiên tiếp 2p thì tắt bếp. Cho ra dĩa rắc thêm tiêu, ngò.",
+      ],
     );
   }
 }

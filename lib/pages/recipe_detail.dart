@@ -128,28 +128,54 @@ class RecipeDetailPageState extends State<RecipeDetailPage> {
                           ),
                         ],
                       ),
-                      // SizedBox(height: 20),
-                      // Center(
-                      //   child: Container(
-                      //     height: 45,
-                      //     width: 275,
-                      //     decoration: BoxDecoration(
-                      //       borderRadius: BorderRadius.circular(25),
-                      //       border: Border.all(color: Colors.lightGreen),
-                      //     ),
-                      //     child: Center(
-                      //       child: Text(
-                      //         "View Ingredients",
-                      //         textAlign: TextAlign.center,
-                      //         style: TextStyle(color: Colors.lightGreen),
-                      //       ),
-                      //     ),
+                      SizedBox(height: 20),
+                      Center(
+                        child: Container(
+                          height: 45,
+                          width: 275,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            border: Border.all(color: Colors.lightGreen),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Nguyên liệu",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.lightGreen),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 25),
+                      Center(
+                        child: Text(
+                          "Các bước làm",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                      // Padding(
+                      //   padding: EdgeInsets.symmetric(horizontal: 25),
+                      //   child: Text(
+                      //     state.detail.description,
+                      //     textAlign: TextAlign.justify,
                       //   ),
                       // ),
-                      SizedBox(height: 25),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 25),
-                        child: Text(state.detail.description),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: List.generate(
+                          state.detail.steps.length,
+                          (index) => Padding(
+                            padding: const EdgeInsets.fromLTRB(25, 15, 25, 0),
+                            child: Text(
+                              "${index + 1}. ${state.detail.steps[index]}",
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                        ),
                       ),
                       SizedBox(height: 75),
                     ],
