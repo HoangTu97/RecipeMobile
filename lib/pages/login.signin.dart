@@ -127,7 +127,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 170.0),
+                    margin: EdgeInsets.only(top: 200.0),
                     decoration: new BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(5.0)),
                       boxShadow: <BoxShadow>[

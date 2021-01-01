@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recipes/routes.dart';
 import 'package:recipes/services/locator.dart';
 import 'package:recipes/services/navigation.dart';
+import 'package:recipes/style/theme.dart' as Theme;
 
 class MyApp extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Color(0XFFc4de8c),
+        primaryColor: Theme.Colors.primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: '/',

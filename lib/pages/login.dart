@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage>
                 ? MediaQuery.of(context).size.height
                 : 775.0,
             decoration: new BoxDecoration(
-              color: Theme.Colors.background,
+              color: Theme.Colors.primaryColor,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.max,
