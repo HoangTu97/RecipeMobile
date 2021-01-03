@@ -30,11 +30,12 @@ class RecipeDetailResponseDTO {
     return RecipeDetailResponseDTO(
       id: map['id'] as int,
       title: map['title'] as String,
-      photos: List<String>.from(map['photos']),
+      photos: map['photos'] == null ? [] : List<String>.from(map['photos']),
       duration: map['duration'] as int,
       description: map['description'] as String,
-      categories: List<String>.from(map['categories']),
-      steps: List<String>.from(map['steps']),
+      categories:
+          map['categories'] == null ? [] : List<String>.from(map['categories']),
+      steps: map['steps'] == null ? [] : List<String>.from(map['steps']),
     );
   }
 

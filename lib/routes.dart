@@ -16,7 +16,7 @@ class RouteGenerator {
       case '/recipe':
         return MaterialPageRoute(
           builder: (_) => RepositoryProvider<RecipeRepository>(
-            create: (_) => FakeRecipeRepositoryImpl(),
+            create: (_) => RecipeRepositoryImpl(),
             child: BlocProvider<RecipeDetailBloc>(
               create: (context) => RecipeDetailBloc(
                 recipeRepository:

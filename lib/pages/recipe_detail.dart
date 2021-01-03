@@ -25,11 +25,11 @@ class RecipeDetailPageState extends State<RecipeDetailPage> {
     super.initState();
 
     _recipeDetailBloc = BlocProvider.of<RecipeDetailBloc>(context);
-    _recipeDetailBloc.add(RecipeDetailFetched());
+    _recipeDetailBloc.add(RecipeDetailFetched(id: widget.id));
   }
 
   Future getData() async {
-    _recipeDetailBloc.add(RecipeDetailFetched());
+    _recipeDetailBloc.add(RecipeDetailFetched(id: widget.id));
   }
 
   @override
@@ -85,6 +85,7 @@ class RecipeDetailPageState extends State<RecipeDetailPage> {
             ),
             BlocBuilder<RecipeDetailBloc, RecipeDetailState>(
               builder: (context, state) {
+                print(state);
                 if (state is RecipeDetailSuccess) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -102,17 +103,17 @@ class RecipeDetailPageState extends State<RecipeDetailPage> {
                         ),
                       ),
                       SizedBox(height: 20),
-                      Center(
-                        child: Text(
-                          state.detail.categories[0],
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.lightGreen,
-                          ),
-                        ),
-                      ),
+                      // Center(
+                      //   child: Text(
+                      //     state.detail.categories[0],
+                      //     textAlign: TextAlign.center,
+                      //     style: TextStyle(
+                      //       fontWeight: FontWeight.bold,
+                      //       fontSize: 15,
+                      //       color: Colors.lightGreen,
+                      //     ),
+                      //   ),
+                      // ),
                       SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -164,15 +165,18 @@ class RecipeDetailPageState extends State<RecipeDetailPage> {
                       //     textAlign: TextAlign.justify,
                       //   ),
                       // ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: List.generate(
-                          state.detail.steps.length,
-                          (index) => Padding(
-                            padding: const EdgeInsets.fromLTRB(25, 15, 25, 0),
-                            child: Text(
-                              "${index + 1}. ${state.detail.steps[index]}",
-                              textAlign: TextAlign.justify,
+                      Container(
+                        width: double.infinity,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: List.generate(
+                            state.detail.steps.length,
+                            (index) => Padding(
+                              padding: const EdgeInsets.fromLTRB(25, 15, 25, 0),
+                              child: Text(
+                                "${index + 1}. ${state.detail.steps[index]}",
+                                textAlign: TextAlign.justify,
+                              ),
                             ),
                           ),
                         ),

@@ -77,7 +77,7 @@ class RecipeDetail extends Equatable {
       duration: responseDTO.duration,
       description: responseDTO.description,
       categories: responseDTO.categories,
-      steps: responseDTO.categories, // TODO: fix later
+      steps: responseDTO.steps,
     );
   }
 

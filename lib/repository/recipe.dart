@@ -1,5 +1,6 @@
 import 'package:recipes/dto/APIResponseDTO.dart';
 import 'package:recipes/dto/ListResponseDTO.dart';
+import 'package:recipes/dto/recipe/RecipeDetailResponseDTO.dart';
 import 'package:recipes/dto/recipe/RecipeListItemResponseDTO.dart';
 import 'package:http/http.dart' as http;
 
@@ -61,7 +62,8 @@ class RecipeRepositoryImpl extends RecipeRepository {
       throw Exception(apiResponseDTO.error);
     }
 
-    return RecipeDetail.fromResponse(apiResponseDTO.data);
+    return RecipeDetail.fromResponse(
+        RecipeDetailResponseDTO.fromMap(apiResponseDTO.data));
   }
 }
 

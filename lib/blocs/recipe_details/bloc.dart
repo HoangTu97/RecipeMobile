@@ -15,19 +15,19 @@ class RecipeDetailBloc extends Bloc<RecipeDetailEvent, RecipeDetailState> {
   @override
   Stream<RecipeDetailState> mapEventToState(RecipeDetailEvent event) async* {
     if (event is RecipeDetailFetched) {
-      try {
-        if (state is RecipeDetailInitial) {
-          final recipe = await recipeRepository.detail(event.id);
-          yield RecipeDetailSuccess(detail: recipe);
-          return;
-        }
-        if (state is RecipeDetailSuccess) {
-          final recipe = await recipeRepository.detail(event.id);
-          yield RecipeDetailSuccess(detail: recipe);
-        }
-      } catch (_) {
-        yield RecipeDetailFailure();
+      // try {
+      if (state is RecipeDetailInitial) {
+        final recipe = await recipeRepository.detail(event.id);
+        yield RecipeDetailSuccess(detail: recipe);
+        return;
       }
+      if (state is RecipeDetailSuccess) {
+        final recipe = await recipeRepository.detail(event.id);
+        yield RecipeDetailSuccess(detail: recipe);
+      }
+      // } catch (_) {
+      //   yield RecipeDetailFailure();
+      // }
     }
   }
 }
