@@ -9,6 +9,7 @@ class RecipeDetailResponseDTO {
   final int duration;
   final String description;
   final List<String> categories;
+  final List<String> steps;
 
   RecipeDetailResponseDTO({
     this.id,
@@ -17,6 +18,7 @@ class RecipeDetailResponseDTO {
     this.duration,
     this.description,
     this.categories,
+    this.steps,
   });
 
   factory RecipeDetailResponseDTO.fromJson(String source) =>
@@ -32,6 +34,7 @@ class RecipeDetailResponseDTO {
       duration: map['duration'] as int,
       description: map['description'] as String,
       categories: List<String>.from(map['categories']),
+      steps: List<String>.from(map['steps']),
     );
   }
 
@@ -65,6 +68,7 @@ class RecipeDetailResponseDTO {
     int duration,
     String description,
     List<String> categories,
+    List<String> steps,
   }) {
     return RecipeDetailResponseDTO(
       id: id ?? this.id,
@@ -73,6 +77,7 @@ class RecipeDetailResponseDTO {
       duration: duration ?? this.duration,
       description: description ?? this.description,
       categories: categories ?? this.categories,
+      steps: steps ?? this.steps,
     );
   }
 
@@ -86,11 +91,12 @@ class RecipeDetailResponseDTO {
       'duration': duration,
       'description': description,
       'categories': categories,
+      'steps': steps,
     };
   }
 
   @override
   String toString() {
-    return 'RecipeDetailResponseDTO(id: $id, title: $title, photos: $photos, duration: $duration, description: $description, categories: $categories)';
+    return 'RecipeDetailResponseDTO(id: $id, title: $title, photos: $photos, duration: $duration, description: $description, categories: $categories, steps: $steps)';
   }
 }

@@ -41,7 +41,7 @@ class RecipeRepositoryImpl extends RecipeRepository {
     ListResponseDTO listResponseDTO =
         ListResponseDTO.fromMap(apiResponseDTO.data);
     return listResponseDTO.items
-        .map((e) => RecipeListItemResponseDTO.fromJson(e))
+        .map((e) => RecipeListItemResponseDTO.fromMap(e))
         .map((e) => Recipe.fromResponse(e))
         .toList();
   }

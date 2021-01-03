@@ -33,8 +33,9 @@ class PostRepositoryImpl implements PostRepository {
 
     ListResponseDTO listResponseDTO =
         ListResponseDTO.fromMap(apiResponseDTO.data);
+
     return listResponseDTO.items
-        .map((e) => PostListItemResponseDTO.fromJson(e))
+        .map((e) => PostListItemResponseDTO.fromMap(e))
         .map((e) => Post.fromResponse(e))
         .toList();
   }

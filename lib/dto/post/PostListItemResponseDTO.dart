@@ -4,12 +4,12 @@ import 'dart:ffi';
 import 'package:flutter/foundation.dart';
 
 class PostListItemResponseDTO {
-  final Uint32 id;
+  final int id;
 
-  final Uint32 userId;
+  final int userId;
   final String userName;
 
-  final Uint32 recipeId;
+  final int recipeId;
   final String recipePhoto;
   final String recipeTitle;
   final String recipeDesc;
@@ -36,14 +36,14 @@ class PostListItemResponseDTO {
     if (map == null) return null;
 
     return PostListItemResponseDTO(
-      id: map['id'] as Uint32,
-      userId: map['user_id'] as Uint32,
+      id: map['id'] as int,
+      userId: map['user_id'] as int,
       userName: map['user_name'] as String,
-      recipeId: map['recipe_id'] as Uint32,
+      recipeId: map['recipe_id'] as int,
       recipePhoto: map['recipe_photo'] as String,
       recipeTitle: map['recipe_title'] as String,
       recipeDesc: map['recipe_desc'] as String,
-      tags: List<String>.from(map['tags']),
+      tags: map['tags'] == null ? [] : List<String>.from(map['tags']),
       countLike: map['count_like'] as int,
     );
   }

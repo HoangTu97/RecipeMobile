@@ -31,7 +31,7 @@ class CategoryRepositoryImpl implements CategoryRepository {
     ListResponseDTO listResponseDTO =
         ListResponseDTO.fromMap(apiResponseDTO.data);
     return listResponseDTO.items
-        .map((e) => CategoryListItemResponseDTO.fromJson(e))
+        .map((e) => CategoryListItemResponseDTO.fromMap(e))
         .map((e) => Category.fromResponse(e))
         .toList();
   }

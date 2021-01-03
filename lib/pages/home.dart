@@ -28,7 +28,7 @@ List<Destination> allDestinations = <Destination>[
     title: 'Home',
     icon: Icons.home,
     child: RepositoryProvider<PostRepository>(
-      create: (_) => FakePostRepositoryImpl(),
+      create: (_) => PostRepositoryImpl(),
       child: BlocProvider<PostBloc>(
         create: (context) => PostBloc(
             postRepository: RepositoryProvider.of<PostRepository>(context)),

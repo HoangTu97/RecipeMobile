@@ -5,12 +5,12 @@ import 'package:equatable/equatable.dart';
 import 'package:recipes/dto/post/PostListItemResponseDTO.dart';
 
 class Post extends Equatable {
-  final Uint32 id;
+  final int id;
 
-  final Uint32 userId;
+  final int userId;
   final String userName;
 
-  final Uint32 recipeId;
+  final int recipeId;
   final String recipePhoto;
   final String recipeTitle;
   final String recipeDesc;

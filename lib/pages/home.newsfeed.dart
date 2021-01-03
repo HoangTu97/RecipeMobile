@@ -83,6 +83,7 @@ class HomeNewsFeedPageState extends State<HomeNewsFeedPage> {
               delegate: SliverChildListDelegate([
                 PostForm(),
                 BlocBuilder<PostBloc, PostState>(builder: (context, state) {
+                  print(state);
                   if (state is PostInitial) {
                     return _postLoading();
                   }
